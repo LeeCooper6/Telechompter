@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+    font-family: Helvetica, "Exo 2.0";
+    background-color: hsl(240, 50%, 10%);
+    color: hsl(30, 100%, 50%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 175%;
+    color: hsl(30, 100%, 60%);
+    text-align: center;
+}
+
+p, blockquote {
+    font-size: 125%;
+    text-align: justify;
+    color: hsl(30, 100%, 50%);
+}
+
+big {
+    font-size: 150%;
+    color: hsl(30, 100%, 55%);
+}
+
+small {
+    font-size: 100%;
+    color: hsl(30, 100%, 45%);
+}
+
+
+
+.UI {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 125%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    width: 33.333%;
+    font-size: 125%;
+    border-width: 0px;
+    background-color: hsl(30, 100%, 50%);
+    color: hsl(240, 50%, 10%);
+    padding: 15px;
+}
+
+button:hover {
+    background-color: hsl(240, 50%, 10%);
+    color: hsl(30, 100%, 50%);
+}
+
+button:active {
+    background-color: hsl(30, 100%, 50%);
+    color: hsl(240, 50%, 10%);
+}
