@@ -121,10 +121,12 @@ document.onkeydown = function(e) {
 
 /*
     Dev Notes:
-        Restylize buttons to match rest of design.
-        Create easier way to import scripts.
+        Check RBF.
         Refactor.
         Documentation.
-        Check RBF.
+
+        Enable user to import text.
+        Enable user to paste text to body/paragraph.
+        Create Markdown/Jotdown renderer.
         Fill out meta keywords and other meta information.
 */
