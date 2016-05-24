@@ -1,34 +1,68 @@
+/*
+    Color Palette:
+        Color Palette Role      Color           Meaning             Example         HSL Code
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        Modified Primary Color  Dark Orange     De-emphasized Color Unspecial Text  hsl(30, 100%, 45%);
+        Primary Color           Orange          Main Color          Normal Text     hsl(30, 100%, 50%);
+        Modified Primary Color  Light Orange    Emphasized Color    Special Text    hsl(30, 100%, 55%);
+        Secondary Color         Dark Blue       Background Color    Background      hsl(240, 50%, 10%);
+
+        Reasoning:
+        Warm colors jump to the foreground.
+        Yellow is the first color the human brain processes.
+        Red is naturally eye-catching.
+        Therefore, orange text should jump to the foreground, and quickly catch the reader's eye.
+        This helps the reader's eyes quickly acquire the next word after each "jump."
+
+        Cool colors lay in the background.
+        To maximize contrast with the text, the background should be a complementary color to the text, meaning blue.
+        However, if the background is too bright or saturated, it produces too much visual noise and competes for attention.
+        So the blue can't be any light/sky blue like cyan, and it can't be over-saturated.
+        Therefore, the dark navy blue background provides contrast against the text without competing for attention.
+*/
+
+/*
+    Set body, headings, italics, bolds, underlines, links, preformats, code, and quotes styles (primary colors and sizes).
+
+    In general, the text is orange and the background is dark blue.
+    Special, emphasized text gets a brighter orange.
+    Normal text gets a normal orange.
+    Un-special text gets a darker orange.
+*/
 body {
-    font-size: 16px;
-    font-family: Helvetica, "Exo 2.0";
+    color: hsl(30, 100%, 50%);
     background-color: hsl(240, 50%, 10%);
-    color: hsl(30, 100%, 50%);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 175%;
-    color: hsl(30, 100%, 60%);
-    text-align: center;
-}
-
-p, blockquote {
-    font-size: 125%;
+    font-size: 200%;
+    font-family: Helvetica, "Exo 2.0";
     text-align: justify;
-    color: hsl(30, 100%, 50%);
 }
-
-big {
-    font-size: 150%;
+/*Display special text with emphasized color.*/
+h1, h2, h3, h4, h5, h6, big, i, em, b, strong, u, a, pre, code, blockquote {
     color: hsl(30, 100%, 55%);
 }
-
+/*Enlarge and center headings.*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 150%;
+    text-align: center;
+}
+/*Enlarge big elements.*/
+big {
+    font-size: 125%;
+}
+/*Reduce small elements and display de-emphasized color.*/
 small {
-    font-size: 100%;
     color: hsl(30, 100%, 45%);
+    font-size: 75%;
+}
+/*Override Courier New font with Exo 2.0, thereby displaying a sans-serif equivalent.*/
+pre, code {
+    font-family: "Exo 2.0";
 }
 
-
-
+/*
+    Position and stylize fixed UI buttons on screen with inverted color scheme.
+    Buttons have an inverted color scheme from the rest of the page, but invert and un-invert when you hover over and click them.
+*/
 .UI {
     position: fixed;
     top: 0px;
@@ -36,25 +70,42 @@ small {
     width: 100%;
     font-size: 125%;
     text-align: center;
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
 }
 
 button {
-    width: 33.333%;
-    font-size: 125%;
-    border-width: 0px;
-    background-color: hsl(30, 100%, 50%);
     color: hsl(240, 50%, 10%);
-    padding: 15px;
+    background-color: hsl(30, 100%, 50%);
+    border-color: hsl(240, 50%, 10%);
+    width: 33.333%;
+    font-size: 100%;
+    padding: 1%;
+    border-width: 1px;
 }
 
 button:hover {
-    background-color: hsl(240, 50%, 10%);
     color: hsl(30, 100%, 50%);
+    background-color: hsl(240, 50%, 10%);
+    border-color: hsl(30, 100%, 50%);
 }
 
 button:active {
-    background-color: hsl(30, 100%, 50%);
     color: hsl(240, 50%, 10%);
+    background-color: hsl(30, 100%, 50%);
+    border-color: hsl(240, 50%, 10%);
+}
+
+/*
+    Stylize special IDs.
+
+    Enlarges UI margin to ensure a space between the button UI and the text at the top of the screen (otherwise the buttons would overlap and cover the text).
+    Enlarges initial tutorial text that later gets deleted.
+*/
+#UIMargin {
+    font-size: 500%;
+}
+
+#InitialTutorialText p {
+    font-size: 125%;
 }

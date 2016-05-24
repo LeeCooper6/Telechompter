@@ -12,6 +12,10 @@ var Down = "˅";
 var IncreaseScrollSpeedButton = document.getElementById("IncreaseScrollSpeedButton");
 var DecreaseScrollSpeedButton = document.getElementById("DecreaseScrollSpeedButton");
 
+var ScriptText = document.getElementById("ScriptText");
+var TutorialCompleted = false;
+var PreviousText = ScriptText.innerHTML;
+
 function AutoScroll() {
     if (TogglePausePlayButton.innerHTML == Pause) {
         if (ToggleDirectionButton.innerHTML == Up)
@@ -36,17 +40,6 @@ function TogglePausePlay() {
 TogglePausePlayButton.onclick = function() {
     if (ConsoleLoggingEnabled) console.log("Toggle pause/play button clicked.");
     TogglePausePlay();
-}
-
-function ToggleDirection() {
-    console.log("wasd");
-    if (ToggleDirectionButton.innerHTML == Up) {
-        if (ConsoleLoggingEnabled) console.log("Set to scroll upwards.");
-        ToggleDirectionButton.innerHTML = Down;
-    } else {
-        if (ConsoleLoggingEnabled) console.log("Set to scroll downwards.");
-        ToggleDirectionButton.innerHTML = Up;
-    }
 }
 
 function ToggleDirection(down) {
@@ -92,32 +85,54 @@ DecreaseScrollSpeedButton.onclick = function() {
 }
 
 document.onkeydown = function(e) {
-    if (e.which == 32) {                    // On pressing Spacebar.
-        if (ConsoleLoggingEnabled) console.log("Space button pushed.");
+    if (e.which == 32 || e.which == 13) {           // On pressing Spacebar or Enter key.
+        if (ConsoleLoggingEnabled) console.log("Spacebar or Enter key pushed.");
         TogglePausePlay();
         e.preventDefault();
-    }
-    else if (e.which == 37 || e.which == 65) {    // On pressing left arrow button or 'a' key.
-        if (ConsoleLoggingEnabled) console.log("Left arrow button pushed."); // RBF update
+    } else if (e.which == 37 || e.which == 65) {    // On pressing left arrow button or 'a' key.
+        if (ConsoleLoggingEnabled) console.log("Left arrow or 'a' pushed."); // RBF update
         AdjustScrollSpeed(false);
         e.preventDefault();
-    }
-    else if (e.which == 39 || e.which == 68) {    // On pressing right arrow button or 'd' key.
-        if (ConsoleLoggingEnabled) console.log("Right arrow button pushed.");
+    } else if (e.which == 39 || e.which == 68) {    // On pressing right arrow button or 'd' key.
+        if (ConsoleLoggingEnabled) console.log("Right arrow or 'd' key pushed.");
         AdjustScrollSpeed(true);
         e.preventDefault();
-    }
-    else if (e.which == 38 || e.which == 87) {    // On pressing up arrow button or 'w' key.
-        if (ConsoleLoggingEnabled) console.log("Up arrow button pushed.");
+    } else if (e.which == 38 || e.which == 87) {    // On pressing up arrow button or 'w' key.
+        if (ConsoleLoggingEnabled) console.log("Up arrow button or 'w' key pushed.");
         ToggleDirection(false);
         e.preventDefault();
-    }
-    else if (e.which == 40 || e.which == 83) {    // On pressing down arrow button or 's' key.
-        if (ConsoleLoggingEnabled) console.log("Down arrow button pushed.");
+    } else if (e.which == 40 || e.which == 83) {    // On pressing down arrow button or 's' key.
+        if (ConsoleLoggingEnabled) console.log("Down arrow or 's' key pushed.");
         ToggleDirection(true);
         e.preventDefault();
+    } else if (e.which == 90 && e.ctrlKey) {
+        if (ConsoleLoggingEnabled) console.log("CTRL+Z buttons pushed.");
+        if (ConsoleLoggingEnabled) console.log("Reverting to previous text.");
+        var temp = ScriptText.innerHTML;
+        ScriptText.innerHTML = PreviousText;
+        PreviousText = temp;
     }
 }
+
+/*
+document.onpaste = function(e) {
+    if (!TutorialCompleted) {
+        if (ConsoleLoggingEnabled) console.log("Tutorial completed. Removing tutorial text.");
+        TutorialCompleted = true;
+        var InitialTutorialText = document.getElementById("InitialTutorialText");
+        InitialTutorialText.parentNode.removeChild(InitialTutorialText);
+    }
+    if (ConsoleLoggingEnabled) console.log("Pasting new text from clipboard.");
+    PreviousText = ScriptText.innerHTML;
+    if (ConsoleLoggingEnabled) console.log("Old text saved to Undo: " + PreviousText);
+    ScriptText.innerHTML = e.clipboardData.getData("Text");
+}
+
+document.oncopy = function(e) {
+    if (ConsoleLoggingEnabled) console.log("Copying text to clipboard.");
+    e.clipboardData.setData("Text", ScriptText.innerHTML);
+}
+*/
 
 /*
     Dev Notes:
@@ -125,8 +140,8 @@ document.onkeydown = function(e) {
         Refactor.
         Documentation.
 
-        Enable user to import text.
-        Enable user to paste text to body/paragraph.
-        Create Markdown/Jotdown renderer.
+        Consider implementing a Markdown renderer.
         Fill out meta keywords and other meta information.
+        Update readme.md.
+        Disable debug console logging.
 */
