@@ -1,6 +1,6 @@
 /*
     Color Palette:
-        Color Palette Role      Color           Meaning             Example         HSL Code
+        Color Palette Role      Color           Meaning             Use             HSL Code
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         Modified Primary Color  Dark Orange     De-emphasized Color Unspecial Text  hsl(30, 100%, 45%);
         Primary Color           Orange          Main Color          Normal Text     hsl(30, 100%, 50%);
@@ -33,35 +33,42 @@ body {
     color: hsl(30, 100%, 50%);
     background-color: hsl(240, 50%, 10%);
     font-size: 200%;
-    font-family: Helvetica, "Exo 2.0";
+    font-family: Helvetica, Arial, "Exo 2.0", "Lucida Console", "Courier New";
     text-align: justify;
 }
-/*Display special text with emphasized color.*/
+/* Display special text with emphasized color.*/
 h1, h2, h3, h4, h5, h6, big, i, em, b, strong, u, a, pre, code, blockquote {
     color: hsl(30, 100%, 55%);
 }
-/*Enlarge and center headings.*/
+/* Display un-special text with de-emphasized color.*/
+small, sub, sup {
+    color: hsl(30, 100%, 45%);
+}
+/* Enlarge and center headings.*/
 h1, h2, h3, h4, h5, h6 {
     font-size: 150%;
     text-align: center;
 }
-/*Enlarge big elements.*/
+/* Enlarge big elements.*/
 big {
     font-size: 125%;
 }
-/*Reduce small elements and display de-emphasized color.*/
+/* Reduce small elements.*/
 small {
-    color: hsl(30, 100%, 45%);
     font-size: 75%;
 }
-/*Override Courier New font with Exo 2.0, thereby displaying a sans-serif equivalent.*/
+/* Invert colors when hovering over link.*/
+a:hover {
+    color: hsl(240, 50%, 10%);
+    background-color: hsl(30, 100%, 50%);
+}
+/* Override Courier New font with Exo 2.0.*/
 pre, code {
     font-family: "Exo 2.0";
 }
-
 /*
     Position and stylize fixed UI buttons on screen with inverted color scheme.
-    Buttons have an inverted color scheme from the rest of the page, but invert and un-invert when you hover over and click them.
+    Buttons have an inverted color scheme, but invert and un-invert when you hover over and click them.
 */
 .UI {
     position: fixed;
@@ -99,13 +106,26 @@ button:active {
 /*
     Stylize special IDs.
 
-    Enlarges UI margin to ensure a space between the button UI and the text at the top of the screen (otherwise the buttons would overlap and cover the text).
-    Enlarges initial tutorial text that later gets deleted.
+    Enlarges UI margin to ensure sufficient space between the button UI and the topmost text.
+    Enlarges initial tutorial text heading that later gets deleted.
+    Stylizes initial text area input box to somewhat match body.
 */
 #UIMargin {
-    font-size: 500%;
+    font-size: 400%;
 }
 
-#InitialTutorialText p {
-    font-size: 125%;
+#InitialTutorialText h1 {
+    font-size: 200%;
+}
+
+textarea {
+    color: hsl(30, 100%, 50%);
+    background-color: hsl(240, 50%, 10%);
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    font-size: 100%;
+    text-align: center;
+    resize: none;
 }

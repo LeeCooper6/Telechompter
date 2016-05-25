@@ -1,24 +1,25 @@
 # Telechompter
+Telechompter is a convenient Teleprompter web app designed to help voice actors, podcasters, radio hosts, public speakers, and singers smoothly and easily read their lines or scripts comfortably at their own pace.
 
-Telechompter is a custom, handcrafted teleprompter web app designed to help voice actors, podcasters, radio hosts, public speakers, or even singers smoothly and easily read their lines and scripts comfortably at their own pace.
+## Features
+Telechompter uses a high-contrast color scheme to help your eyes quickly and smoothly acquire the next word.
+Telechompter is fully widescreen to minimize uncomfortable "eye jumps" (<a href="https://en.wikipedia.org/wiki/Saccade" target="_blank">saccades</a>) to the next line.
+Telechompter also features Auto-Scrolling with adjustable speeds.
+Telechompter's Auto-Scrolling can be controlled via the buttons above or via convenient keyboard commands:
++ Spacebar or Enter: Play or Pause Auto-Scroll
++ Right Arrow or D: Auto-Scroll Faster
++ Let Arrow or A: Auto-Scroll Slower
++ Up Arrow or W: Auto-Scroll Up
++ Down Arrow or S: Auto-Scroll Down
 
-# Purpose
+## How to Use
+1. Copy your script (CTRL+C).
+2. Paste your script into Telechompter (CTRL+V).
+3. Use and adjust Auto-Scroll as necessary.
+4. Enjoy.
 
-Telechompter is a web app that runs in your browser as your very own personal teleprompter. 
-
-Telechompter helps you chew through difficult lines or entire scripts smoothly and easily at your own comfortable pace.
-
-Telechompter is designed for voice actors, podcasters, radio hosts, public speakers, singers, and anyone else who needs to read their lines or scripts smoothly without hiccups or do-overs.
-
-# Features
-
-+ High contrast color scheme designed for your eyes to quickly and easily see the next word without difficulty or accidental mispronunciation.
-+ Widescreen designed to minimize "eyes jumping" to the next line.
-+ Automatic scrolling with adjustable speed so you can comfortably read at your own pace.
-+ Convenient keyboard commands so you can easily auto-scroll up, down, fast, or slow without even touching the mouse.
-
-# How to Use
-
-1. Open the thing.
-2. Use the thing.
-3. Profit.
+## Compatibility
+Telechompter currently works in:
++ Google Chrome
++ Firefox
++ Microsoft Edge
