@@ -20,6 +20,6 @@ Telechompter's Auto-Scrolling can be controlled via the buttons above or via con
 
 ## Compatibility
 Telechompter currently works in:
-+ Google Chrome
-+ Firefox
-+ Microsoft Edge
+* Google Chrome
+* Firefox
+* Microsoft Edge
