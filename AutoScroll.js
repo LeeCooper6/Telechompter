@@ -173,6 +173,10 @@ InputBox.select();
         Consider implementing a Markdown renderer.
         Fill out meta keywords and other meta information.
         Update readme.md.
+        Rename AutoScroll.js to Main.js.
+        CSS: Try margin: 0px; for body
+        HTML & JS: Make textarea InputBox into contentEditable div, allow full editing?
+        HTML?: Save editor scroll speed preferences to local storage and load onload
 
         Test HTML:
         <h1>Heading 1</h1>
